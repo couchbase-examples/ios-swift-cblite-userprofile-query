@@ -11,6 +11,11 @@
 		0D835136279629D400580A24 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D835135279629D400580A24 /* ProfileViewController.swift */; };
 		0D97AFAE278E20D5003FCDBD /* FunctionalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D97AFAD278E20D5003FCDBD /* FunctionalTests.swift */; };
 		0DF7C41A279F16AF00D3E653 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0DF7C419279F16AF00D3E653 /* CouchbaseLiteSwift */; };
+		0DF7C41C279F2A2200D3E653 /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7C41B279F2A2200D3E653 /* UniversityViewController.swift */; };
+		0DF7C41F279F41C100D3E653 /* UniversityRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7C41E279F41C100D3E653 /* UniversityRecord.swift */; };
+		0DF7C421279F439800D3E653 /* UniversityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7C420279F439800D3E653 /* UniversityPresenter.swift */; };
+		0DF7C424279F514600D3E653 /* UniversityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF7C423279F514600D3E653 /* UniversityCell.swift */; };
+		0DF7C426279F5D8800D3E653 /* universities.cblite2 in Resources */ = {isa = PBXBuildFile; fileRef = 0DF7C425279F5D8800D3E653 /* universities.cblite2 */; };
 		5F61CCBA204F578100399C1D /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F61CCB9204F578100399C1D /* UserRecord.swift */; };
 		5F7CCFAF204849BE0019D450 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CCFAE204849BE0019D450 /* UserPresenter.swift */; };
 		5F7CCFB1204849DB0019D450 /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7CCFB0204849DB0019D450 /* PresenterProtocol.swift */; };
@@ -52,6 +57,11 @@
 		0D835135279629D400580A24 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D97AFA9278E20D5003FCDBD /* UserProfileQueryDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserProfileQueryDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D97AFAD278E20D5003FCDBD /* FunctionalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalTests.swift; sourceTree = "<group>"; };
+		0DF7C41B279F2A2200D3E653 /* UniversityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityViewController.swift; sourceTree = "<group>"; };
+		0DF7C41E279F41C100D3E653 /* UniversityRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityRecord.swift; sourceTree = "<group>"; };
+		0DF7C420279F439800D3E653 /* UniversityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityPresenter.swift; sourceTree = "<group>"; };
+		0DF7C423279F514600D3E653 /* UniversityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityCell.swift; sourceTree = "<group>"; };
+		0DF7C425279F5D8800D3E653 /* universities.cblite2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = universities.cblite2; sourceTree = "<group>"; };
 		5F61CCB9204F578100399C1D /* UserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
 		5F7CCFAE204849BE0019D450 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		5F7CCFB0204849DB0019D450 /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
@@ -94,11 +104,29 @@
 			path = UserProfileQueryDemoUITests;
 			sourceTree = "<group>";
 		};
+		0DF7C41D279F419300D3E653 /* prebuild */ = {
+			isa = PBXGroup;
+			children = (
+				0DF7C425279F5D8800D3E653 /* universities.cblite2 */,
+			);
+			path = prebuild;
+			sourceTree = "<group>";
+		};
+		0DF7C422279F512900D3E653 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0D83513327960D8000580A24 /* FormTextField.swift */,
+				0DF7C423279F514600D3E653 /* UniversityCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		5F7CCFAD2048498B0019D450 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
 				5F7CCFAE204849BE0019D450 /* UserPresenter.swift */,
 				5F7CCFB0204849DB0019D450 /* PresenterProtocol.swift */,
+				0DF7C420279F439800D3E653 /* UniversityPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -124,6 +152,8 @@
 		5F86E8492037E292007ED29E /* UserProfileQueryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DF7C422279F512900D3E653 /* views */,
+				0DF7C41D279F419300D3E653 /* prebuild */,
 				5F7CCFAD2048498B0019D450 /* presenter */,
 				5F86E882203B669C007ED29E /* model */,
 				5F86E87A203B6577007ED29E /* utilities */,
@@ -142,7 +172,6 @@
 			children = (
 				5F86E87B203B659C007ED29E /* Notifications.swift */,
 				5F86E87D203B65D1007ED29E /* CustomErrors.swift */,
-				0D83513327960D8000580A24 /* FormTextField.swift */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -152,6 +181,7 @@
 			children = (
 				5F86E84C2037E292007ED29E /* LoginViewController.swift */,
 				0D835135279629D400580A24 /* ProfileViewController.swift */,
+				0DF7C41B279F2A2200D3E653 /* UniversityViewController.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -161,6 +191,7 @@
 			children = (
 				5F86E883203B66B5007ED29E /* DatabaseManager.swift */,
 				5F61CCB9204F578100399C1D /* UserRecord.swift */,
+				0DF7C41E279F41C100D3E653 /* UniversityRecord.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -264,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F86E8552037E292007ED29E /* LaunchScreen.storyboard in Resources */,
+				0DF7C426279F5D8800D3E653 /* universities.cblite2 in Resources */,
 				5F86E8522037E292007ED29E /* Assets.xcassets in Resources */,
 				5F86E8502037E292007ED29E /* Main.storyboard in Resources */,
 			);
@@ -286,12 +318,16 @@
 			files = (
 				5F86E87C203B659C007ED29E /* Notifications.swift in Sources */,
 				5F86E87E203B65D1007ED29E /* CustomErrors.swift in Sources */,
+				0DF7C41F279F41C100D3E653 /* UniversityRecord.swift in Sources */,
 				5F7CCFB1204849DB0019D450 /* PresenterProtocol.swift in Sources */,
+				0DF7C41C279F2A2200D3E653 /* UniversityViewController.swift in Sources */,
+				0DF7C424279F514600D3E653 /* UniversityCell.swift in Sources */,
 				5F86E884203B66B5007ED29E /* DatabaseManager.swift in Sources */,
 				0D835136279629D400580A24 /* ProfileViewController.swift in Sources */,
 				5F86E84D2037E292007ED29E /* LoginViewController.swift in Sources */,
 				5F7CCFAF204849BE0019D450 /* UserPresenter.swift in Sources */,
 				5F61CCBA204F578100399C1D /* UserRecord.swift in Sources */,
+				0DF7C421279F439800D3E653 /* UniversityPresenter.swift in Sources */,
 				0D83513427960D8000580A24 /* FormTextField.swift in Sources */,
 				5F86E84B2037E292007ED29E /* AppDelegate.swift in Sources */,
 			);

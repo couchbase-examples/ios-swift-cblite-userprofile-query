@@ -1,4 +1,4 @@
-//  UserProfileDemo
+//  UserProfileQueryDemo
 //  Copyright © 2022 Couchbase Inc. All rights reserved.
 
 import Foundation
@@ -16,6 +16,7 @@ class ProfileViewController
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var tfAddress: UITextField!
     @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var lblUnversity: UILabel!
     
     @IBAction func logOff(_ sender: Any) {
         NotificationCenter.default.post(Notification.notificationForLogOut())

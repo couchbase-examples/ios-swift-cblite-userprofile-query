@@ -1,4 +1,4 @@
-//  UserProfileDemo
+//  UserProfileQueryDemo
 //  Copyright © 2022 Couchbase Inc. All rights reserved.
 
 import UIKit

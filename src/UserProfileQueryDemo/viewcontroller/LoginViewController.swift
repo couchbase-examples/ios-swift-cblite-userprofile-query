@@ -1,15 +1,15 @@
-//  LoginViewController.swift
+//  UserProfileQueryDemo
 //  Copyright © 2022 Couchbase Inc. All rights reserved.
 
 import UIKit
 
 class LoginViewController
-    : UIViewController {
-   
+: UIViewController {
+    
     @IBOutlet weak var passwordTextEntry: UITextField!
     @IBOutlet weak var userTextEntry: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-     
+    
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
@@ -64,22 +64,35 @@ extension LoginViewController : UITextFieldDelegate {
 
 // MARK : IBOutlet handlers
 extension LoginViewController {
-    
     @IBAction func onLoginTapped(_ sender: UIButton) {
         if let userName = self.userTextEntry.text, let password = self.passwordTextEntry.text {
             let cbMgr = DatabaseManager.shared
-            cbMgr.openOrCreateDatabaseForUser(userName, password: password, handler: { [weak self](error) in
+            
+            // First open prebuilt DB with content common to all users
+            cbMgr.openPrebuiltDatabase(handler: { [weak self](error) in
                 guard let `self` = self else {
                     return
                 }
                 switch error {
                 case nil:
+                    
                     self.activitySpinner.startAnimating()
-                    NotificationCenter.default.post(Notification.notificationForLoginSuccess(userName))
-                    self.activitySpinner.stopAnimating()
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNVC")
-                    self.present(vc!, animated: true, completion: nil)
-                
+                    cbMgr.openOrCreateDatabaseForUser(userName, password: password, handler: { [weak self](error) in
+                        guard let `self` = self else {
+                            return
+                        }
+                        switch error {
+                        case nil:
+                            NotificationCenter.default.post(Notification.notificationForLoginSuccess(userName))
+                            self.activitySpinner.stopAnimating()
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UserProfileNVC")
+                            self.present(vc!, animated: true, completion: nil)
+                            
+                        default:
+                            NotificationCenter.default.post(Notification.notificationForLoginFailure(userName))
+                            self.activitySpinner.stopAnimating()
+                        }
+                    })
                 default:
                     self.activitySpinner.startAnimating()
                     NotificationCenter.default.post(Notification.notificationForLoginFailure(userName))
@@ -87,6 +100,5 @@ extension LoginViewController {
                 }
             })
         }
-        
     }
 }
