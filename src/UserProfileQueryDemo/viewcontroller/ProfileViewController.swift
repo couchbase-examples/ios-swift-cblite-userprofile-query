@@ -10,6 +10,7 @@ class ProfileViewController
     fileprivate var record:UserRecord?
     fileprivate var imageUpdated:Bool = false
     lazy var userPresenter:UserPresenter = UserPresenter()
+    fileprivate var defaultUniversityText = "No University Selected"
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var ivProfilePic: UIImageView!
@@ -29,6 +30,7 @@ class ProfileViewController
         userProfile.email = self.lblUsername.text
         userProfile.address = self.tfAddress.text
         userProfile.name = self.tfName.text
+        userProfile.university = (self.lblUnversity.text != defaultUniversityText) ? self.lblUnversity.text : ""
         
         if let imageVal = self.ivProfilePic?.image, let imageData = imageVal.jpegData(compressionQuality: 0.75) {
             userProfile.imageData = imageData
@@ -44,6 +46,19 @@ class ProfileViewController
             else {
                  self.showAlertWithTitle("", message: "Succesfully updated profile!")
             }
+        }
+    }
+    
+    @IBAction func onSelectUniversity(_ sender: Any) {
+        if let destinationViewController = (self.storyboard?.instantiateViewController(withIdentifier: "UniversityViewController")) as? UniversityViewController {
+            
+            destinationViewController.modalPresentationStyle = .formSheet
+            destinationViewController.onDoneBlock = onUniversitySelected
+            
+            if (self.lblUnversity.text != defaultUniversityText){
+                destinationViewController.currUniversitySelection = self.lblUnversity?.text
+            }
+            self.present(destinationViewController, animated: true, completion: {})
         }
     }
     
@@ -117,6 +132,7 @@ class ProfileViewController
         tfName.text = ""
         tfAddress.text = ""
         lblUsername.text = ""
+        lblUnversity.text = defaultUniversityText
         ivProfilePic.image = UIImage.init(imageLiteralResourceName: "default-user-thumbnail")
         self.userPresenter.detachPresentingView(self)
     }
@@ -136,6 +152,12 @@ class ProfileViewController
         view.endEditing(true)
     }
     
+    public func onUniversitySelected(_ university:String?) {
+        print ("University \(String(describing: university)) selected")
+        self.lblUnversity.text = university
+        self.doneButton.isEnabled = true
+    }
+    
     //presenter protocol call to update the data on the screen
     func updateUIWithUserRecord(_ record: UserRecord?, error: Error?) {
         switch error {
@@ -152,6 +174,9 @@ class ProfileViewController
         tfName.text = record?.name
         tfAddress.text = record?.address
         lblUsername.text = record?.email
+        if (record?.university != "" && record?.university != nil){
+            lblUnversity.text = record?.university
+        }
         
         if let imageData = self.record?.imageData {
             ivProfilePic.image = UIImage.init(data: imageData)

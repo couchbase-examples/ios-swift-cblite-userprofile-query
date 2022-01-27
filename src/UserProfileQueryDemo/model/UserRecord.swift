@@ -12,9 +12,10 @@ struct UserRecord : CustomStringConvertible{
     var email:String?
     var address:String?
     var imageData:Data?
+    var university:String?
     var extended:ExtendedData? // future
     
     var description: String {
-        return "name = \(String(describing: name)), email = \(String(describing: email)), address = \(String(describing: address)), imageData = \(imageData?.debugDescription ?? " ")"
+        return "name = \(String(describing: name)), email = \(String(describing: email)), address = \(String(describing: address)), university = \(String(describing: university)) imageData = \(imageData?.debugDescription ?? " ")"
     }
 }

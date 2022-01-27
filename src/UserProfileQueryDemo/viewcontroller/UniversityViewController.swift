@@ -133,7 +133,7 @@ extension UniversityViewController {
         }
         else {
             indexOfSelectedUniverity = indexPath
-            self.selectedUniversity = universities?[indexPath.section]
+            self.selectedUniversity = universities?[indexPath.row]
         }
     }
 }

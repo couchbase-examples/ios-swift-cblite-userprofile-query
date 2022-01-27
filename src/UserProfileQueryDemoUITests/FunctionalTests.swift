@@ -174,6 +174,8 @@ class FunctionalTests:
             sleep(2)
         }
         
+        //update university
+        
         doneButton.tap()
         sleep(2)
         
