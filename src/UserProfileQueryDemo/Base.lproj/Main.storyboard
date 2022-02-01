@@ -209,6 +209,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="No University Selected" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38E-fD-5ad">
                                                 <rect key="frame" x="85.5" y="0.0" width="265.5" height="20.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="idUniversity"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -218,6 +219,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i5-Jv-Pp9">
                                         <rect key="frame" x="0.0" y="489.5" width="351" height="33"/>
                                         <color key="backgroundColor" name="LoginButtonBackgroundColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="idSelectUniversity"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Select University">

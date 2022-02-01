@@ -4,12 +4,12 @@
 import XCTest
 
 struct TestingHelper {
-    
     static let TESTUSERNAME: String = "demo@example.com"
     static let TESTUSERNAME2: String = "demo1@example.com"
     static let TESTPASSWORD: String = "password"
     static let TESTFULLNAME: String  = "John Doe"
     static let TESTADDRESS:  String = "123 nowhere street"
+    static let TESTUNIVERSITY: String = "Devi Ahilya University of Indore"
     
     static let IDUSERNAME: String = "Username"
     static let IDPASSWORD: String = "Password"
@@ -18,6 +18,7 @@ struct TestingHelper {
     static let IDNAME: String = "idName"
     static let IDADDRESS: String = "idAddress"
     static let IDEMAIL: String = "idEmail"
+    static let IDUNIVERSITY: String = "idUniversity"
     static let IDUPDATEIMAGE: String = "idUpdateImage"
     static let NAVIGATIONBAR: String = "Your Profile"
     static let UPDATEIMAGEBUTTONTEXT: String = "Update Image"
@@ -26,6 +27,14 @@ struct TestingHelper {
     static let OKBUTTON: String = "OK"
     static let SELECTPHOTOBUTTON: String = "Select From Photo Album"
     static let PHOTONAMESELECT: String = "Photo, August 08, 2012, 5:55 PM"
+    static let SELECTUNIVERSITYBUTTON: String = "Select University"
+    static let UNVERSITYLOOKUPBUTTON: String = "Lookup"
+    static let UNIVERSITYSEARCHTEXT: String =  "Dev"
+    static let UNIVERSITYCOUNTRYSEARCHTEXT: String = "India"
+    static let UNIVERSITYNAMESEARCHTEXTBOX: String = "sbUniversityName"
+    static let UNIVERSITYCOUNTRYSEARCHTEXTBOX: String = "sbUniversityCountry"
+    static let UNIVERSITYTABLEVIEW: String = "tableView"
+    static let UNIVERSITYNAVIGATIONBAR: String = "Search Universities"
 }
 
 class FunctionalTests:
@@ -105,6 +114,7 @@ class FunctionalTests:
         let name = application.textFields[TestingHelper.IDNAME].value as! String
         let address = application.textFields[TestingHelper.IDADDRESS].value as! String
         let email = application.staticTexts[TestingHelper.IDEMAIL].label 
+        let university = application.staticTexts[TestingHelper.IDUNIVERSITY].label
         
         let navBar = application.navigationBars[TestingHelper.NAVIGATIONBAR]
         let logOffButton = navBar.buttons[TestingHelper.LOGOFFBUTTON]
@@ -113,6 +123,7 @@ class FunctionalTests:
         XCTAssertEqual(name, TestingHelper.TESTFULLNAME)
         XCTAssertEqual(address, TestingHelper.TESTADDRESS)
         XCTAssertEqual(email, TestingHelper.TESTUSERNAME)
+        XCTAssertEqual(university, TestingHelper.TESTUNIVERSITY)
         
         logOffButton.tap()
         sleep(5)
@@ -142,6 +153,7 @@ class FunctionalTests:
         let navBar = application.navigationBars[TestingHelper.NAVIGATIONBAR]
         let doneButton = navBar.buttons[TestingHelper.DONEBUTTON]
         let logOffButton = navBar.buttons[TestingHelper.LOGOFFBUTTON]
+        let selectUniversityButton = application.buttons[TestingHelper.SELECTUNIVERSITYBUTTON]
         
         name.tap()
         sleep(2)
@@ -175,6 +187,8 @@ class FunctionalTests:
         }
         
         //update university
+        selectUniversityButton.tap()
+        selectUniversity(application: application)
         
         doneButton.tap()
         sleep(2)
@@ -183,6 +197,35 @@ class FunctionalTests:
         sleep(1)
         
         logOffButton.tap()
+    }
+    
+    func selectUniversity(application: XCUIApplication){
+        //arrange
+        let navBar = application.navigationBars[TestingHelper.UNIVERSITYNAVIGATIONBAR]
+        let doneButton = navBar.buttons[TestingHelper.DONEBUTTON]
+        let lookupButton = application.buttons[TestingHelper.UNVERSITYLOOKUPBUTTON]
+        let searchName = application.otherElements[TestingHelper.UNIVERSITYNAMESEARCHTEXTBOX]
+        let searchCountry = application.otherElements[TestingHelper.UNIVERSITYCOUNTRYSEARCHTEXTBOX]
+        let tableView = application.tables[TestingHelper.UNIVERSITYTABLEVIEW]
+        
+        //act
+        searchName.tap()
+        searchName.tap()
+        sleep(2)
+        searchName.typeText(TestingHelper.UNIVERSITYSEARCHTEXT)
+       
+        searchCountry.tap()
+        sleep(2)
+        searchCountry.typeText(TestingHelper.UNIVERSITYCOUNTRYSEARCHTEXT)
+        
+        lookupButton.tap()
+        sleep(3)
+        
+        tableView.cells.element(boundBy: 0).tap()
+        sleep(3)
+    
+        doneButton.tap()
+        
     }
     
     func addScreenshot(application: XCUIApplication, name: String) {

@@ -64,6 +64,15 @@ class UniversityViewController :
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //used for UITests
+        self.sbUniversityName.accessibilityIdentifier = "sbUniversityName"
+        
+        //used for UITests
+        self.sbUniversityCountry.accessibilityIdentifier = "sbUniversityCountry"
+       
+        //used for UITests
+        self.tableView.accessibilityIdentifier = "tableView"
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 80
