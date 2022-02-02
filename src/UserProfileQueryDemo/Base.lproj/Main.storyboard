@@ -301,30 +301,30 @@
                                 <rect key="frame" x="0.0" y="232" width="375" height="430"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UniversityCell" id="PN2-qT-jYo" customClass="UniversityCell" customModule="UserProfileQueryDemo">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="79.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UniversityCell" rowHeight="120" id="PN2-qT-jYo" customClass="UniversityCell" customModule="UserProfileQueryDemo">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PN2-qT-jYo" id="JLH-Ah-bpR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qa7-pU-23j">
-                                                    <rect key="frame" x="16" y="8" width="343" height="63.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-9Q-ape">
+                                                    <rect key="frame" x="16" y="8" width="343" height="104"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="260" text="University Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-ta-UI8">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="260" horizontalCompressionResistancePriority="1000" text="University Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgu-ta-UI8">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University Country" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-MN-su2">
-                                                            <rect key="frame" x="0.0" y="23.5" width="343" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="258" text="University Country" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-MN-su2">
+                                                            <rect key="frame" x="0.0" y="21.5" width="343" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website URL" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-ga-S1z">
-                                                            <rect key="frame" x="0.0" y="45.5" width="343" height="18"/>
+                                                            <rect key="frame" x="0.0" y="41" width="343" height="63"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -333,10 +333,10 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qa7-pU-23j" firstAttribute="top" secondItem="JLH-Ah-bpR" secondAttribute="top" constant="8" id="0Si-pz-JlD"/>
-                                                <constraint firstAttribute="trailing" secondItem="qa7-pU-23j" secondAttribute="trailing" constant="16" id="59B-cW-xGC"/>
-                                                <constraint firstItem="qa7-pU-23j" firstAttribute="leading" secondItem="JLH-Ah-bpR" secondAttribute="leading" constant="16" id="ak0-AZ-KpT"/>
-                                                <constraint firstAttribute="bottom" secondItem="qa7-pU-23j" secondAttribute="bottom" constant="8" id="qng-xl-G32"/>
+                                                <constraint firstAttribute="trailing" secondItem="EOt-9Q-ape" secondAttribute="trailing" constant="16" id="Nd2-Ls-lZe"/>
+                                                <constraint firstAttribute="bottom" secondItem="EOt-9Q-ape" secondAttribute="bottom" constant="8" id="PeI-n1-Nmg"/>
+                                                <constraint firstItem="EOt-9Q-ape" firstAttribute="top" secondItem="JLH-Ah-bpR" secondAttribute="top" constant="8" id="g4v-Jp-CVH"/>
+                                                <constraint firstItem="EOt-9Q-ape" firstAttribute="leading" secondItem="JLH-Ah-bpR" secondAttribute="leading" constant="16" id="t4Y-1L-WAJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -347,14 +347,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-Wn-faC">
-                                <rect key="frame" x="10" y="254" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ixf-Wn-faC" id="5tA-lN-G5R">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c48-QH-mP8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -402,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENf-RD-ifB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="391"/>
+            <point key="canvasLocation" x="2781.5999999999999" y="390.85457271364322"/>
         </scene>
     </scenes>
     <resources>

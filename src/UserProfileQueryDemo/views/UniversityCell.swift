@@ -40,6 +40,9 @@ class UniversityCell : UITableViewCell  {
         if let urlValue = urlValue {
             self.url.text = urlValue
         }
+        self.layoutIfNeeded()
+        self.setNeedsDisplay()
+        self.layoutSubviews()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

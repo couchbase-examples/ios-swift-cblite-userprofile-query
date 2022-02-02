@@ -75,7 +75,8 @@ class UniversityViewController :
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 120
     }
     
     override func viewDidDisappear(_ animated: Bool) {
