@@ -67,7 +67,6 @@ extension UniversityPresenter {
                 }
             }
 
-            self.associatedView?.dataFinishedLoading()
             self.associatedView?.updateUIWithUniversityRecords(universities, error: nil)
 
         } catch {
