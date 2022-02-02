@@ -179,7 +179,7 @@ class FunctionalTests:
             sleep(3)
             application.sheets.scrollViews.otherElements.buttons[TestingHelper.SELECTPHOTOBUTTON].tap()
         
-            sleep(1)
+            sleep(4)
             
             application.scrollViews.otherElements.images.firstMatch.tap()
             
