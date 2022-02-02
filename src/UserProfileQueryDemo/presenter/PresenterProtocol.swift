@@ -21,10 +21,8 @@ public protocol PresenterProtocol: AnyObject {
 // default implementation of PresentingViewProtocol
 extension PresentingViewProtocol {
     public func dataStartedLoading() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     public func dataFinishedLoading() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 
